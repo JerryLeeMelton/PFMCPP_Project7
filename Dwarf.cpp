@@ -7,7 +7,7 @@ name(name_)
 
 }
 
-cosnt std::string& Dwarf::getName() 
+const std::string& Dwarf::getName() 
 {
     return name;
 }
