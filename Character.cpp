@@ -105,10 +105,6 @@ void Character::attackInternal(Character& other)
 void Character::printStats()
 {
     std::cout << getName() << "'s stats: " << std::endl;
-    assert(false);
-    /*
-    make your getStats() use a function from the Utility.h
-    */
     std::cout << getStats(); 
     
     std::cout << std::endl;
@@ -117,9 +113,9 @@ void Character::printStats()
 
 void Character::levelUp()
 {
-    hitPoints = *initialHitPoints * 1.1f;
-    armor = *initialArmorLevel * 1.1f;
-    attackDamage = *initialAttackDamage * 1.1f;
+    hitPoints = static_cast<int>( *initialHitPoints * 1.1f );
+    armor = static_cast<int>( *initialArmorLevel * 1.1f );
+    attackDamage = static_cast<int>( *initialAttackDamage * 1.1f );
 
     initialHitPoints.reset( new int(hitPoints) );
     initialArmorLevel.reset( new int(armor) );
