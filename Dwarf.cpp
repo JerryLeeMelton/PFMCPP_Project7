@@ -17,5 +17,5 @@ const std::string& Dwarf::getName()
 
 std::string Dwarf::getStats() 
 {
-    getCharacterStats(this);
+    return getCharacterStats(this);
 }

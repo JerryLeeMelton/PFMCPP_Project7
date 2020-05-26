@@ -6,10 +6,15 @@
 DragonSlayer::DragonSlayer(std::string name_, int hp, int armor) :
 Character(hp, armor, 4),
 name(name_),
-attackItem(new AttackItem())
+attackItem( new AttackItem() )
 {
     helpfulItems = makeHelpfulItems( rand() % 10 + 1 );
     defensiveItems = makeDefensiveItems( rand() % 10 + 1 );
+}
+
+DragonSlayer::~DragonSlayer()
+{
+    
 }
 
 const std::string& DragonSlayer::getName()
@@ -42,5 +47,5 @@ void DragonSlayer::attack(Character& other)
 
 std::string DragonSlayer::getStats() 
 {
-
+    return getCharacterStats(this);
 }
